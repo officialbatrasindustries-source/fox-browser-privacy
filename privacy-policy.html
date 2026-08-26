@@ -3,26 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07111f">
+<meta name="theme-color" content="#020712">
 
 <title>Fox Browser - Privacy Policy</title>
 
 <style>
     :root{
-        --bg:#06101c;
-        --bg-2:#091827;
-        --surface:rgba(11, 28, 46, 0.78);
-        --surface-solid:#0c1c2d;
-        --surface-soft:#10263b;
-        --line:rgba(134, 198, 255, 0.16);
-        --line-strong:rgba(92, 177, 255, 0.32);
-        --text:#f4f9ff;
-        --muted:#a9bdd2;
-        --blue:#3ca8ff;
-        --blue-2:#5b7cff;
-        --cyan:#5ee1ff;
+        --bg:#020712;
+        --card:rgba(5, 18, 34, 0.72);
+        --card-strong:rgba(4, 15, 30, 0.86);
+        --line:rgba(72, 180, 255, 0.30);
+        --line-soft:rgba(255,255,255,0.10);
+        --text:#f5fbff;
+        --muted:#b7c7d9;
+        --blue:#37a9ff;
+        --cyan:#65e3ff;
+        --blue2:#5e7cff;
         --green:#63e6a7;
-        --shadow:0 18px 50px rgba(0,0,0,0.30);
+        --shadow:0 20px 55px rgba(0,0,0,0.42);
     }
 
     *{
@@ -39,10 +37,19 @@
         color:var(--text);
         font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         line-height:1.7;
+
+        /* USER IMAGE AS FULL PAGE BACKGROUND */
         background:
-            radial-gradient(circle at 12% 0%, rgba(60,168,255,.18), transparent 28%),
-            radial-gradient(circle at 88% 10%, rgba(91,124,255,.14), transparent 26%),
-            linear-gradient(180deg, var(--bg) 0%, #071421 48%, #06101c 100%);
+            linear-gradient(
+                rgba(0, 3, 10, 0.62),
+                rgba(0, 5, 16, 0.76)
+            ),
+            url("fox-privacy-bg.png");
+
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
     }
 
     body::before{
@@ -51,122 +58,101 @@
         inset:0;
         pointer-events:none;
         background:
-            linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
-        background-size:40px 40px;
-        mask-image:linear-gradient(to bottom, rgba(0,0,0,.65), transparent 95%);
-    }
-
-    a{
-        color:inherit;
+            radial-gradient(circle at 50% 25%, rgba(35,125,255,0.14), transparent 40%),
+            linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.24));
+        z-index:0;
     }
 
     .page{
         position:relative;
         z-index:1;
-        width:min(1120px, calc(100% - 32px));
+        width:min(920px, calc(100% - 28px));
         margin:0 auto;
-        padding:22px 0 48px;
+        padding:24px 0 44px;
     }
 
     .topbar{
         position:sticky;
         top:10px;
-        z-index:50;
+        z-index:20;
         display:flex;
         align-items:center;
         justify-content:space-between;
-        gap:16px;
-        margin-bottom:18px;
-        padding:12px 14px;
-        border:1px solid var(--line);
+        gap:14px;
+        padding:11px 14px;
+        margin-bottom:16px;
+        border:1px solid var(--line-soft);
         border-radius:18px;
-        background:rgba(6,16,28,.82);
+        background:rgba(2, 9, 20, 0.76);
         backdrop-filter:blur(18px);
         -webkit-backdrop-filter:blur(18px);
-        box-shadow:0 10px 30px rgba(0,0,0,.20);
+        box-shadow:0 10px 28px rgba(0,0,0,0.26);
     }
 
     .brand{
         display:flex;
         align-items:center;
-        gap:11px;
+        gap:10px;
         min-width:0;
     }
 
-    .logo{
-        width:40px;
-        height:40px;
-        border-radius:13px;
+    .brand-icon{
+        width:38px;
+        height:38px;
+        border-radius:12px;
         display:grid;
         place-items:center;
         flex:0 0 auto;
-        background:
-            linear-gradient(145deg, rgba(94,225,255,.95), rgba(60,168,255,.95) 48%, rgba(91,124,255,.95));
-        color:#04111e;
-        font-size:20px;
-        box-shadow:0 8px 24px rgba(60,168,255,.28);
+        background:linear-gradient(145deg, var(--cyan), var(--blue), var(--blue2));
+        color:#03111f;
+        font-size:19px;
+        box-shadow:0 8px 22px rgba(55,169,255,.28);
     }
 
     .brand-title{
         font-size:15px;
         font-weight:800;
-        letter-spacing:-.01em;
     }
 
     .brand-subtitle{
         color:var(--muted);
         font-size:11px;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
     }
 
-    .privacy-badge{
+    .status{
         display:flex;
         align-items:center;
-        gap:8px;
-        padding:7px 11px;
-        border:1px solid rgba(99,230,167,.22);
+        gap:7px;
+        padding:7px 10px;
         border-radius:999px;
+        border:1px solid rgba(99,230,167,.22);
         background:rgba(99,230,167,.08);
-        color:#baf5d6;
+        color:#bff6d8;
         font-size:11px;
         font-weight:800;
         white-space:nowrap;
     }
 
-    .privacy-dot{
+    .status-dot{
         width:7px;
         height:7px;
         border-radius:50%;
         background:var(--green);
-        box-shadow:0 0 12px rgba(99,230,167,.75);
+        box-shadow:0 0 10px rgba(99,230,167,.75);
     }
 
     .hero{
         position:relative;
         overflow:hidden;
+        padding:34px 28px;
         border:1px solid var(--line);
-        border-radius:30px;
-        padding:40px 34px 34px;
+        border-radius:28px;
         background:
-            linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018)),
-            var(--surface);
+            linear-gradient(145deg, rgba(12,35,63,.74), rgba(3,13,27,.76));
         backdrop-filter:blur(20px);
         -webkit-backdrop-filter:blur(20px);
         box-shadow:var(--shadow);
-    }
-
-    .hero::before{
-        content:"";
-        position:absolute;
-        width:330px;
-        height:330px;
-        right:-110px;
-        top:-130px;
-        border-radius:50%;
-        background:radial-gradient(circle, rgba(94,225,255,.22), rgba(60,168,255,.08) 48%, transparent 72%);
+        margin-bottom:16px;
     }
 
     .hero::after{
@@ -176,132 +162,76 @@
         right:0;
         bottom:0;
         height:1px;
-        background:linear-gradient(90deg, transparent, var(--cyan), var(--blue-2), transparent);
-        opacity:.65;
+        background:linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            var(--blue2),
+            transparent
+        );
+        opacity:.75;
     }
 
     .eyebrow{
-        position:relative;
-        display:inline-flex;
-        align-items:center;
-        gap:8px;
-        margin-bottom:14px;
         color:#bfeaff;
         font-size:12px;
         font-weight:900;
-        letter-spacing:.11em;
+        letter-spacing:.10em;
         text-transform:uppercase;
-    }
-
-    .eyebrow::before{
-        content:"";
-        width:22px;
-        height:2px;
-        border-radius:999px;
-        background:linear-gradient(90deg, var(--cyan), var(--blue));
-        box-shadow:0 0 10px rgba(94,225,255,.6);
+        margin-bottom:10px;
     }
 
     h1{
-        position:relative;
         margin:0;
-        max-width:760px;
-        font-size:clamp(34px, 6vw, 60px);
-        line-height:1.04;
-        letter-spacing:-.045em;
-        background:linear-gradient(90deg, #ffffff 0%, #d7efff 35%, #a9d8ff 70%, #bfc8ff 100%);
+        font-size:clamp(32px, 6vw, 54px);
+        line-height:1.05;
+        letter-spacing:-.04em;
+        background:linear-gradient(90deg, #ffffff, #ccecff 48%, #a7c8ff);
         -webkit-background-clip:text;
         background-clip:text;
         color:transparent;
     }
 
-    .hero-text{
-        position:relative;
-        max-width:760px;
-        margin:16px 0 0;
+    .intro{
+        max-width:720px;
+        margin:14px 0 0;
         color:var(--muted);
         font-size:15px;
     }
 
-    .hero-meta{
-        position:relative;
+    .meta{
         display:flex;
         flex-wrap:wrap;
-        gap:10px;
-        margin-top:22px;
+        gap:9px;
+        margin-top:20px;
     }
 
     .chip{
         padding:8px 11px;
-        border-radius:13px;
-        border:1px solid var(--line);
-        background:rgba(255,255,255,.035);
-        color:#dcecff;
-        font-size:12px;
-    }
-
-    .main-grid{
-        display:grid;
-        grid-template-columns:240px minmax(0,1fr);
-        gap:18px;
-        margin-top:18px;
-        align-items:start;
-    }
-
-    .sidebar{
-        position:sticky;
-        top:86px;
-        padding:12px;
-        border:1px solid var(--line);
-        border-radius:20px;
-        background:rgba(9,24,39,.78);
-        backdrop-filter:blur(16px);
-        -webkit-backdrop-filter:blur(16px);
-        box-shadow:0 12px 30px rgba(0,0,0,.18);
-    }
-
-    .sidebar-title{
-        padding:7px 9px 10px;
-        color:#dfeeff;
-        font-size:12px;
-        font-weight:900;
-        text-transform:uppercase;
-        letter-spacing:.08em;
-    }
-
-    .sidebar a{
-        display:block;
-        text-decoration:none;
-        color:var(--muted);
-        padding:10px 11px;
+        border:1px solid var(--line-soft);
         border-radius:12px;
-        font-size:13px;
-        transition:.18s ease;
+        background:rgba(255,255,255,.045);
+        color:#dceeff;
+        font-size:12px;
     }
 
-    .sidebar a:hover{
-        color:#fff;
-        background:rgba(60,168,255,.10);
-        box-shadow:inset 0 0 0 1px rgba(60,168,255,.10);
-    }
-
+    /* NO SIDE PANEL — ONLY CENTER CONTENT */
     .content{
-        min-width:0;
+        width:100%;
     }
 
     .section{
         position:relative;
-        scroll-margin-top:95px;
-        margin-bottom:13px;
-        padding:23px 22px 21px;
+        overflow:hidden;
+        margin-bottom:12px;
+        padding:22px 22px 20px;
         border:1px solid var(--line);
-        border-radius:21px;
+        border-radius:20px;
         background:
-            linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012)),
-            rgba(10,26,43,.74);
-        backdrop-filter:blur(14px);
-        -webkit-backdrop-filter:blur(14px);
-        box-shadow:0 12px 28px rgba(0,0,0,.16);
+            linear-gradient(145deg, rgba(11,31,54,.70), rgba(3,14,29,.72));
+        backdrop-filter:blur(17px);
+        -webkit-backdrop-filter:blur(17px);
+        box-shadow:0 12px 30px rgba(0,0,0,0.22);
     }
 
     .section::before{
@@ -312,29 +242,29 @@
         bottom:18px;
         width:3px;
         border-radius:999px;
-        background:linear-gradient(180deg, var(--cyan), var(--blue), var(--blue-2));
-        box-shadow:0 0 16px rgba(60,168,255,.45);
+        background:linear-gradient(180deg, var(--cyan), var(--blue), var(--blue2));
+        box-shadow:0 0 16px rgba(55,169,255,.48);
     }
 
     .section-head{
         display:flex;
         align-items:center;
-        gap:12px;
-        margin-bottom:10px;
+        gap:11px;
+        margin-bottom:9px;
     }
 
     .number{
-        width:36px;
-        height:36px;
-        border-radius:12px;
+        width:35px;
+        height:35px;
+        border-radius:11px;
         display:grid;
         place-items:center;
         flex:0 0 auto;
-        color:#dff4ff;
+        color:#dcf5ff;
         font-size:12px;
         font-weight:900;
-        border:1px solid rgba(60,168,255,.24);
-        background:linear-gradient(145deg, rgba(94,225,255,.12), rgba(60,168,255,.08));
+        border:1px solid rgba(101,227,255,.24);
+        background:rgba(55,169,255,.10);
     }
 
     h2{
@@ -345,13 +275,13 @@
 
     p{
         margin:8px 0;
-        color:#c7d6e5;
+        color:#cad8e8;
     }
 
     ul{
         margin:8px 0 0;
         padding-left:22px;
-        color:#c7d6e5;
+        color:#cad8e8;
     }
 
     li{
@@ -371,9 +301,9 @@
 
     .contact-card{
         padding:13px 14px;
-        border:1px solid var(--line);
+        border:1px solid var(--line-soft);
         border-radius:14px;
-        background:rgba(255,255,255,.026);
+        background:rgba(255,255,255,.04);
     }
 
     .contact-label{
@@ -392,91 +322,76 @@
     }
 
     .footer{
-        margin-top:18px;
-        padding:20px;
+        margin-top:16px;
+        padding:18px;
         text-align:center;
-        color:#73879b;
+        color:#8ca1b8;
         font-size:12px;
+        border:1px solid var(--line-soft);
+        border-radius:16px;
+        background:rgba(2,9,20,.64);
+        backdrop-filter:blur(14px);
+        -webkit-backdrop-filter:blur(14px);
     }
 
-    /* Tablet */
-    @media(max-width:900px){
+    /* TABLET */
+    @media(max-width:800px){
         .page{
-            width:min(100% - 22px, 1120px);
+            width:min(100% - 20px, 920px);
         }
 
-        .main-grid{
-            grid-template-columns:1fr;
-        }
-
-        .sidebar{
-            position:static;
-            display:flex;
-            overflow-x:auto;
-            gap:8px;
-            padding:9px;
-            scrollbar-width:none;
-        }
-
-        .sidebar::-webkit-scrollbar{
-            display:none;
-        }
-
-        .sidebar-title{
-            display:none;
-        }
-
-        .sidebar a{
-            flex:0 0 auto;
-            white-space:nowrap;
-            border:1px solid var(--line);
-            background:rgba(255,255,255,.025);
-            padding:8px 10px;
+        .hero{
+            border-radius:24px;
         }
     }
 
-    /* Phone */
+    /* PHONE */
     @media(max-width:600px){
         body{
             line-height:1.62;
+
+            /*
+             * Fixed backgrounds can be jumpy on some mobile WebViews,
+             * so phone uses scroll while keeping the same full cover image.
+             */
+            background-attachment:scroll;
         }
 
         .page{
-            width:min(100% - 14px, 1120px);
+            width:min(100% - 14px, 920px);
             padding-top:8px;
             padding-bottom:28px;
         }
 
         .topbar{
             top:6px;
-            margin-bottom:10px;
             border-radius:15px;
             padding:10px 11px;
+            margin-bottom:10px;
         }
 
-        .logo{
-            width:36px;
-            height:36px;
+        .brand-icon{
+            width:35px;
+            height:35px;
             border-radius:11px;
-            font-size:18px;
         }
 
-        .privacy-badge{
+        .status{
             display:none;
         }
 
         .hero{
-            border-radius:22px;
-            padding:27px 18px 23px;
+            padding:26px 18px 23px;
+            border-radius:21px;
         }
 
-        .hero-text{
+        .intro{
             font-size:14px;
         }
 
-        .hero-meta{
+        .meta{
             gap:7px;
-            margin-top:18px;
+            margin-top:17px;
         }
 
         .chip{
@@ -484,23 +399,14 @@
             font-size:11px;
         }
 
-        .main-grid{
-            gap:12px;
-            margin-top:12px;
-        }
-
-        .sidebar{
-            border-radius:15px;
-        }
-
         .section{
-            border-radius:17px;
             padding:18px 15px 17px;
             margin-bottom:10px;
+            border-radius:17px;
         }
 
         .section-head{
-            gap:10px;
+            gap:9px;
         }
 
         .number{
@@ -513,37 +419,23 @@
             font-size:18px;
         }
 
-        p, ul{
+        p,
+        ul{
             font-size:14px;
         }
 
         .contact-grid{
             grid-template-columns:1fr;
         }
-
-        .footer{
-            padding-bottom:6px;
-        }
     }
 
-    /* Very small phones */
     @media(max-width:380px){
         .brand-subtitle{
             display:none;
         }
 
         h1{
-            font-size:31px;
-        }
-
-        .hero{
-            padding-left:16px;
-            padding-right:16px;
-        }
-
-        .section{
-            padding-left:14px;
-            padding-right:14px;
+            font-size:30px;
         }
     }
 </style>
@@ -555,7 +447,7 @@
 
     <div class="topbar">
         <div class="brand">
-            <div class="logo">🦊</div>
+            <div class="brand-icon">🦊</div>
 
             <div>
                 <div class="brand-title">Fox Browser</div>
@@ -563,8 +455,8 @@
             </div>
         </div>
 
-        <div class="privacy-badge">
-            <span class="privacy-dot"></span>
+        <div class="status">
+            <span class="status-dot"></span>
             Privacy First
         </div>
     </div>
@@ -574,208 +466,190 @@
 
         <h1>Fox Browser Privacy Policy</h1>
 
-        <p class="hero-text">
+        <p class="intro">
             Fox Browser respects your privacy. This Privacy Policy explains how
             information is handled when you use our application.
         </p>
 
-        <div class="hero-meta">
+        <div class="meta">
             <div class="chip">Effective Date: 29 July 2026</div>
             <div class="chip">Local-first data</div>
             <div class="chip">Fox Browser</div>
         </div>
     </header>
 
-    <div class="main-grid">
+    <main class="content">
 
-        <nav class="sidebar" aria-label="Privacy policy sections">
-            <div class="sidebar-title">Contents</div>
-            <a href="#information">Information</a>
-            <a href="#incognito">Incognito</a>
-            <a href="#permissions">Permissions</a>
-            <a href="#downloads">Downloads</a>
-            <a href="#cookies">Cookies</a>
-            <a href="#third-party">Third-Party</a>
-            <a href="#sharing">Data Sharing</a>
-            <a href="#security">Security</a>
-            <a href="#children">Children</a>
-            <a href="#changes">Changes</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <section class="section">
+            <div class="section-head">
+                <div class="number">01</div>
+                <h2>Information We Collect</h2>
+            </div>
 
-        <main class="content">
+            <p>
+                Fox Browser does not collect personal information such as your name,
+                phone number, email address or passwords.
+            </p>
 
-            <section class="section" id="information">
-                <div class="section-head">
-                    <div class="number">01</div>
-                    <h2>Information We Collect</h2>
+            <p>
+                Browsing history, bookmarks, downloads and settings are stored only on
+                your device.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">02</div>
+                <h2>Incognito Mode</h2>
+            </div>
+
+            <p>
+                Pages opened in Incognito Mode are not saved in normal browsing history.
+            </p>
+
+            <p>
+                Temporary browsing data may be removed when the Incognito session ends.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">03</div>
+                <h2>Permissions</h2>
+            </div>
+
+            <ul>
+                <li>Internet permission is used to load websites.</li>
+                <li>Storage permission is used to save downloaded files.</li>
+                <li>Microphone permission is used only when you choose Voice Search.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">04</div>
+                <h2>Downloads</h2>
+            </div>
+
+            <p>
+                Files downloaded through Fox Browser are saved on your device.
+            </p>
+
+            <p>
+                Users are responsible for downloaded content.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">05</div>
+                <h2>Cookies</h2>
+            </div>
+
+            <p>
+                Websites opened inside Fox Browser may use cookies and local storage.
+            </p>
+
+            <p>
+                Those websites manage their own cookies according to their own privacy
+                policies.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">06</div>
+                <h2>Third-Party Websites</h2>
+            </div>
+
+            <p>
+                Fox Browser displays websites from third parties.
+            </p>
+
+            <p>
+                We do not control or take responsibility for the privacy practices or
+                content of those websites.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">07</div>
+                <h2>Data Sharing</h2>
+            </div>
+
+            <p>
+                Fox Browser does not sell your personal information.
+            </p>
+
+            <p>
+                We do not share your personal information with third parties unless
+                required by law.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">08</div>
+                <h2>Security</h2>
+            </div>
+
+            <p>
+                We take reasonable measures to keep your locally stored information safe.
+            </p>
+
+            <p>
+                However, no internet transmission is completely secure.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">09</div>
+                <h2>Children's Privacy</h2>
+            </div>
+
+            <p>
+                Fox Browser is not intended to knowingly collect personal information
+                from children.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">10</div>
+                <h2>Changes to this Policy</h2>
+            </div>
+
+            <p>
+                We may update this Privacy Policy from time to time.
+            </p>
+
+            <p>
+                Any changes will appear on this page.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div class="number">11</div>
+                <h2>Contact</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-label">Developer</div>
+                    <div class="contact-value">official.batrasindustries</div>
                 </div>
 
-                <p>
-                    Fox Browser does not collect personal information such as your name,
-                    phone number, email address or passwords.
-                </p>
-
-                <p>
-                    Browsing history, bookmarks, downloads and settings are stored only on
-                    your device.
-                </p>
-            </section>
-
-            <section class="section" id="incognito">
-                <div class="section-head">
-                    <div class="number">02</div>
-                    <h2>Incognito Mode</h2>
+                <div class="contact-card">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">official.batrasindustries@gmail.com</div>
                 </div>
+            </div>
+        </section>
 
-                <p>
-                    Pages opened in Incognito Mode are not saved in normal browsing history.
-                </p>
-
-                <p>
-                    Temporary browsing data may be removed when the Incognito session ends.
-                </p>
-            </section>
-
-            <section class="section" id="permissions">
-                <div class="section-head">
-                    <div class="number">03</div>
-                    <h2>Permissions</h2>
-                </div>
-
-                <ul>
-                    <li>Internet permission is used to load websites.</li>
-                    <li>Storage permission is used to save downloaded files.</li>
-                    <li>Microphone permission is used only when you choose Voice Search.</li>
-                </ul>
-            </section>
-
-            <section class="section" id="downloads">
-                <div class="section-head">
-                    <div class="number">04</div>
-                    <h2>Downloads</h2>
-                </div>
-
-                <p>
-                    Files downloaded through Fox Browser are saved on your device.
-                </p>
-
-                <p>
-                    Users are responsible for downloaded content.
-                </p>
-            </section>
-
-            <section class="section" id="cookies">
-                <div class="section-head">
-                    <div class="number">05</div>
-                    <h2>Cookies</h2>
-                </div>
-
-                <p>
-                    Websites opened inside Fox Browser may use cookies and local storage.
-                </p>
-
-                <p>
-                    Those websites manage their own cookies according to their own privacy
-                    policies.
-                </p>
-            </section>
-
-            <section class="section" id="third-party">
-                <div class="section-head">
-                    <div class="number">06</div>
-                    <h2>Third-Party Websites</h2>
-                </div>
-
-                <p>
-                    Fox Browser displays websites from third parties.
-                </p>
-
-                <p>
-                    We do not control or take responsibility for the privacy practices or
-                    content of those websites.
-                </p>
-            </section>
-
-            <section class="section" id="sharing">
-                <div class="section-head">
-                    <div class="number">07</div>
-                    <h2>Data Sharing</h2>
-                </div>
-
-                <p>
-                    Fox Browser does not sell your personal information.
-                </p>
-
-                <p>
-                    We do not share your personal information with third parties unless
-                    required by law.
-                </p>
-            </section>
-
-            <section class="section" id="security">
-                <div class="section-head">
-                    <div class="number">08</div>
-                    <h2>Security</h2>
-                </div>
-
-                <p>
-                    We take reasonable measures to keep your locally stored information safe.
-                </p>
-
-                <p>
-                    However, no internet transmission is completely secure.
-                </p>
-            </section>
-
-            <section class="section" id="children">
-                <div class="section-head">
-                    <div class="number">09</div>
-                    <h2>Children's Privacy</h2>
-                </div>
-
-                <p>
-                    Fox Browser is not intended to knowingly collect personal information
-                    from children.
-                </p>
-            </section>
-
-            <section class="section" id="changes">
-                <div class="section-head">
-                    <div class="number">10</div>
-                    <h2>Changes to this Policy</h2>
-                </div>
-
-                <p>
-                    We may update this Privacy Policy from time to time.
-                </p>
-
-                <p>
-                    Any changes will appear on this page.
-                </p>
-            </section>
-
-            <section class="section" id="contact">
-                <div class="section-head">
-                    <div class="number">11</div>
-                    <h2>Contact</h2>
-                </div>
-
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="contact-label">Developer</div>
-                        <div class="contact-value">official.batrasindustries</div>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-label">Email</div>
-                        <div class="contact-value">official.batrasindustries@gmail.com</div>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-    </div>
+    </main>
 
     <div class="footer">
         © 2026 Fox Browser
