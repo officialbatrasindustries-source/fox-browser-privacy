@@ -2,29 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- IMPORTANT:
+     viewport-fit=cover + mobile safe spacing prevents the page from
+     sitting underneath the phone status bar / display cutout.
+-->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
 <meta name="theme-color" content="#06111f">
 
 <title>Fox Browser - Privacy Policy</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet">
 
 <style>
+
     :root{
-        --bg:#06111f;
-        --panel:rgba(7, 22, 40, 0.72);
-        --panel-strong:rgba(6, 18, 34, 0.86);
-        --line:rgba(95, 192, 255, 0.24);
+        --panel:rgba(7,22,40,0.72);
+        --line:rgba(95,192,255,0.24);
         --line-soft:rgba(255,255,255,0.08);
-        --text:#f6fbff;
-        --muted:#b7c8da;
-        --blue:#3da9ff;
-        --cyan:#61e1ff;
-        --blue2:#5d7cff;
-        --green:#65e6a8;
+
+        --text:#F6FBFF;
+        --muted:#B7C8DA;
+
+        --blue:#3DA9FF;
+        --cyan:#61E1FF;
+        --blue2:#5D7CFF;
+        --green:#65E6A8;
+
         --shadow:0 20px 60px rgba(0,0,0,0.38);
+
+        /*
+         * On devices/WebViews that expose safe-area insets,
+         * this becomes the real status-bar/cutout inset.
+         */
+        --safe-top:env(safe-area-inset-top, 0px);
+        --safe-bottom:env(safe-area-inset-bottom, 0px);
+        --safe-left:env(safe-area-inset-left, 0px);
+        --safe-right:env(safe-area-inset-right, 0px);
     }
 
     *{
@@ -33,19 +52,28 @@
 
     html{
         scroll-behavior:smooth;
+        background:#06111F;
     }
 
     body{
         margin:0;
         min-height:100vh;
+
         color:var(--text);
-        font-family:"Manrope", "Segoe UI", Roboto, Arial, sans-serif;
+
+        font-family:
+            "Manrope",
+            "Segoe UI",
+            Roboto,
+            Arial,
+            sans-serif;
+
         line-height:1.72;
 
         background:
             linear-gradient(
-                rgba(0, 4, 12, 0.58),
-                rgba(0, 6, 18, 0.78)
+                rgba(0,4,12,0.58),
+                rgba(0,6,18,0.78)
             ),
             url("fox-privacy-bg.png");
 
@@ -57,44 +85,90 @@
 
     body::before{
         content:"";
+
         position:fixed;
         inset:0;
-        pointer-events:none;
-        background:
-            radial-gradient(circle at 50% 12%, rgba(42,132,255,0.13), transparent 32%),
-            linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.22));
+
         z-index:0;
+        pointer-events:none;
+
+        background:
+            radial-gradient(
+                circle at 50% 12%,
+                rgba(42,132,255,0.13),
+                transparent 32%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,0.05),
+                rgba(0,0,0,0.22)
+            );
     }
 
     .page{
         position:relative;
         z-index:1;
-        width:min(940px, calc(100% - 28px));
+
+        width:min(
+            940px,
+            calc(
+                100%
+                - 28px
+                - var(--safe-left)
+                - var(--safe-right)
+            )
+        );
+
         margin:0 auto;
-        padding:24px 0 46px;
+
+        padding:
+            24px
+            0
+            calc(46px + var(--safe-bottom));
     }
+
+    /* =========================================================
+       TOP BAR
+       ========================================================= */
 
     .topbar{
         position:sticky;
+
+        /*
+         * Desktop normal.
+         * Mobile rule below increases this so it never touches
+         * the status bar.
+         */
         top:10px;
+
         z-index:30;
+
         display:flex;
         align-items:center;
         justify-content:space-between;
+
         gap:14px;
+
         margin-bottom:16px;
+
         padding:10px 14px;
+
         border:1px solid var(--line-soft);
         border-radius:18px;
-        background:rgba(3, 12, 25, 0.78);
+
+        background:rgba(3,12,25,0.78);
+
         backdrop-filter:blur(18px);
         -webkit-backdrop-filter:blur(18px);
-        box-shadow:0 12px 34px rgba(0,0,0,0.24);
+
+        box-shadow:
+            0 12px 34px rgba(0,0,0,0.24);
     }
 
     .brand{
         display:flex;
         align-items:center;
+
         gap:11px;
         min-width:0;
     }
@@ -102,16 +176,23 @@
     .brand-logo{
         width:42px;
         height:42px;
+
         flex:0 0 auto;
+
         border-radius:13px;
         object-fit:cover;
+
         box-shadow:
             0 0 0 1px rgba(97,225,255,0.18),
             0 8px 24px rgba(42,132,255,0.28);
     }
 
     .brand-title{
-        font-family:"Space Grotesk", "Manrope", sans-serif;
+        font-family:
+            "Space Grotesk",
+            "Manrope",
+            sans-serif;
+
         font-size:16px;
         font-weight:700;
         letter-spacing:-0.02em;
@@ -119,7 +200,9 @@
 
     .brand-subtitle{
         margin-top:1px;
+
         color:var(--muted);
+
         font-size:11px;
         font-weight:500;
     }
@@ -127,180 +210,329 @@
     .privacy-badge{
         display:flex;
         align-items:center;
+
         gap:8px;
+
         padding:7px 10px;
+
         border-radius:999px;
-        border:1px solid rgba(101,230,168,0.20);
-        background:rgba(101,230,168,0.07);
-        color:#c1f7d9;
+
+        border:
+            1px solid
+            rgba(101,230,168,0.20);
+
+        background:
+            rgba(101,230,168,0.07);
+
+        color:#C1F7D9;
+
         font-size:11px;
         font-weight:800;
+
         white-space:nowrap;
     }
 
     .privacy-dot{
         width:7px;
         height:7px;
+
         border-radius:50%;
+
         background:var(--green);
-        box-shadow:0 0 11px rgba(101,230,168,0.78);
+
+        box-shadow:
+            0 0 11px
+            rgba(101,230,168,0.78);
     }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .hero{
         position:relative;
         overflow:hidden;
+
         display:grid;
-        grid-template-columns:auto 1fr;
+
+        grid-template-columns:
+            auto
+            1fr;
+
         align-items:center;
+
         gap:24px;
+
         margin-bottom:16px;
+
         padding:30px;
-        border:1px solid var(--line);
+
+        border:
+            1px solid
+            var(--line);
+
         border-radius:28px;
+
         background:
-            linear-gradient(145deg, rgba(12,35,63,0.72), rgba(3,13,27,0.76));
+            linear-gradient(
+                145deg,
+                rgba(12,35,63,0.72),
+                rgba(3,13,27,0.76)
+            );
+
         backdrop-filter:blur(20px);
         -webkit-backdrop-filter:blur(20px);
+
         box-shadow:var(--shadow);
     }
 
     .hero::after{
         content:"";
+
         position:absolute;
+
         left:0;
         right:0;
         bottom:0;
+
         height:1px;
-        background:linear-gradient(
-            90deg,
-            transparent,
-            var(--cyan),
-            var(--blue2),
-            transparent
-        );
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                var(--cyan),
+                var(--blue2),
+                transparent
+            );
+
         opacity:0.75;
     }
 
     .hero-logo{
         width:132px;
         height:132px;
+
         border-radius:30px;
+
         object-fit:cover;
+
         box-shadow:
-            0 0 0 1px rgba(97,225,255,0.20),
-            0 0 42px rgba(55,169,255,0.23),
-            0 16px 36px rgba(0,0,0,0.30);
+            0 0 0 1px
+            rgba(97,225,255,0.20),
+            0 0 42px
+            rgba(55,169,255,0.23),
+            0 16px 36px
+            rgba(0,0,0,0.30);
     }
 
     .eyebrow{
-        color:#bfeaff;
+        margin-bottom:9px;
+
+        color:#BFEAFF;
+
         font-size:12px;
         font-weight:800;
+
         letter-spacing:0.10em;
+
         text-transform:uppercase;
-        margin-bottom:9px;
     }
 
     h1{
         margin:0;
-        font-family:"Space Grotesk", "Manrope", sans-serif;
-        font-size:clamp(31px, 5.2vw, 52px);
+
+        font-family:
+            "Space Grotesk",
+            "Manrope",
+            sans-serif;
+
+        font-size:
+            clamp(
+                31px,
+                5.2vw,
+                52px
+            );
+
         line-height:1.06;
+
         letter-spacing:-0.04em;
-        background:linear-gradient(90deg, #ffffff 0%, #d2efff 45%, #a9c8ff 100%);
+
+        background:
+            linear-gradient(
+                90deg,
+                #FFFFFF 0%,
+                #D2EFFF 45%,
+                #A9C8FF 100%
+            );
+
         -webkit-background-clip:text;
         background-clip:text;
+
         color:transparent;
     }
 
     .intro{
         max-width:670px;
+
         margin:13px 0 0;
+
         color:var(--muted);
+
         font-size:14.5px;
     }
 
     .meta{
         display:flex;
         flex-wrap:wrap;
+
         gap:8px;
+
         margin-top:18px;
     }
 
     .chip{
         padding:7px 10px;
-        border:1px solid var(--line-soft);
+
+        border:
+            1px solid
+            var(--line-soft);
+
         border-radius:12px;
-        background:rgba(255,255,255,0.04);
-        color:#deefff;
+
+        background:
+            rgba(255,255,255,0.04);
+
+        color:#DE EFFF;
+        color:#DEEFFF;
+
         font-size:11.5px;
         font-weight:600;
     }
 
+    /* =========================================================
+       POLICY CARDS
+       ========================================================= */
+
     .section{
         position:relative;
         overflow:hidden;
+
         margin-bottom:12px;
-        padding:22px 22px 20px;
-        border:1px solid var(--line);
+
+        padding:
+            22px
+            22px
+            20px;
+
+        border:
+            1px solid
+            var(--line);
+
         border-radius:20px;
+
         background:
-            linear-gradient(145deg, rgba(11,31,54,0.69), rgba(3,14,29,0.72));
+            linear-gradient(
+                145deg,
+                rgba(11,31,54,0.69),
+                rgba(3,14,29,0.72)
+            );
+
         backdrop-filter:blur(17px);
         -webkit-backdrop-filter:blur(17px);
-        box-shadow:0 12px 30px rgba(0,0,0,0.20);
+
+        box-shadow:
+            0 12px 30px
+            rgba(0,0,0,0.20);
     }
 
     .section::before{
         content:"";
+
         position:absolute;
+
         left:0;
         top:18px;
         bottom:18px;
+
         width:3px;
+
         border-radius:999px;
-        background:linear-gradient(180deg, var(--cyan), var(--blue), var(--blue2));
-        box-shadow:0 0 16px rgba(55,169,255,0.48);
+
+        background:
+            linear-gradient(
+                180deg,
+                var(--cyan),
+                var(--blue),
+                var(--blue2)
+            );
+
+        box-shadow:
+            0 0 16px
+            rgba(55,169,255,0.48);
     }
 
     .section-head{
         display:flex;
         align-items:center;
+
         gap:11px;
+
         margin-bottom:9px;
     }
 
     .number{
         width:35px;
         height:35px;
-        border-radius:11px;
+
         display:grid;
         place-items:center;
+
         flex:0 0 auto;
-        color:#dcf5ff;
+
+        border-radius:11px;
+
+        border:
+            1px solid
+            rgba(97,225,255,0.24);
+
+        background:
+            rgba(55,169,255,0.10);
+
+        color:#DCF5FF;
+
         font-size:12px;
         font-weight:800;
-        border:1px solid rgba(97,225,255,0.24);
-        background:rgba(55,169,255,0.10);
     }
 
     h2{
         margin:0;
-        font-family:"Space Grotesk", "Manrope", sans-serif;
+
+        font-family:
+            "Space Grotesk",
+            "Manrope",
+            sans-serif;
+
         font-size:20px;
+
         letter-spacing:-0.02em;
     }
 
     p{
         margin:8px 0;
-        color:#cad8e8;
+
+        color:#CAD8E8;
+
         font-size:14.5px;
     }
 
     ul{
         margin:8px 0 0;
+
         padding-left:22px;
-        color:#cad8e8;
+
+        color:#CAD8E8;
+
         font-size:14.5px;
     }
 
@@ -314,90 +546,171 @@
 
     .contact-grid{
         display:grid;
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr
+            1fr;
+
         gap:10px;
+
         margin-top:12px;
     }
 
     .contact-card{
         padding:13px 14px;
-        border:1px solid var(--line-soft);
+
+        border:
+            1px solid
+            var(--line-soft);
+
         border-radius:14px;
-        background:rgba(255,255,255,0.04);
+
+        background:
+            rgba(255,255,255,0.04);
     }
 
     .contact-label{
-        color:var(--muted);
-        font-size:10.5px;
-        text-transform:uppercase;
-        letter-spacing:0.07em;
         margin-bottom:4px;
+
+        color:var(--muted);
+
+        font-size:10.5px;
         font-weight:700;
+
+        text-transform:uppercase;
+
+        letter-spacing:0.07em;
     }
 
     .contact-value{
-        color:#fff;
+        color:#FFFFFF;
+
         font-size:13px;
         font-weight:700;
+
         word-break:break-word;
     }
 
     .footer{
         margin-top:16px;
+
         padding:18px;
+
         text-align:center;
-        color:#8ca1b8;
-        font-size:12px;
-        border:1px solid var(--line-soft);
+
+        border:
+            1px solid
+            var(--line-soft);
+
         border-radius:16px;
-        background:rgba(2,9,20,0.64);
+
+        background:
+            rgba(2,9,20,0.64);
+
         backdrop-filter:blur(14px);
         -webkit-backdrop-filter:blur(14px);
+
+        color:#8CA1B8;
+
+        font-size:12px;
     }
 
-    /* TABLET */
+    /* =========================================================
+       TABLET
+       ========================================================= */
+
     @media(max-width:800px){
+
         .page{
-            width:min(100% - 20px, 940px);
+            width:min(
+                100% - 20px,
+                940px
+            );
         }
 
         .hero{
-            grid-template-columns:110px 1fr;
+            grid-template-columns:
+                110px
+                1fr;
+
             gap:20px;
+
             padding:24px;
+
             border-radius:24px;
         }
 
         .hero-logo{
             width:110px;
             height:110px;
+
             border-radius:25px;
         }
     }
 
-    /* PHONE */
+    /* =========================================================
+       PHONE STATUS-BAR FIX
+       ========================================================= */
+
     @media(max-width:600px){
+
         body{
             line-height:1.62;
+
             background-attachment:scroll;
+
+            /*
+             * Android WebView in edge-to-edge mode may report
+             * safe-area as 0. 28px is the fallback status-bar space.
+             *
+             * So content NEVER begins underneath the status icons.
+             */
+            padding-top:
+                max(
+                    28px,
+                    var(--safe-top)
+                );
         }
 
         .page{
-            width:min(100% - 14px, 940px);
+            width:min(
+                100% - 14px,
+                940px
+            );
+
             padding-top:8px;
-            padding-bottom:28px;
+            padding-bottom:
+                calc(
+                    28px
+                    + var(--safe-bottom)
+                );
         }
 
         .topbar{
-            top:6px;
+            /*
+             * Important for sticky state:
+             * it also remains below the phone status bar after scroll.
+             */
+            top:
+                max(
+                    8px,
+                    calc(
+                        var(--safe-top)
+                        + 8px
+                    )
+                );
+
             margin-bottom:10px;
-            border-radius:15px;
+
             padding:9px 10px;
+
+            border-radius:15px;
         }
 
         .brand-logo{
             width:36px;
             height:36px;
+
             border-radius:11px;
         }
 
@@ -407,16 +720,25 @@
 
         .hero{
             grid-template-columns:1fr;
+
             justify-items:center;
+
             text-align:center;
+
             gap:16px;
-            padding:23px 17px 21px;
+
+            padding:
+                23px
+                17px
+                21px;
+
             border-radius:21px;
         }
 
         .hero-logo{
             width:104px;
             height:104px;
+
             border-radius:24px;
         }
 
@@ -426,24 +748,33 @@
 
         .meta{
             justify-content:center;
+
             gap:7px;
+
             margin-top:16px;
         }
 
         .chip{
             padding:7px 9px;
+
             font-size:10.5px;
         }
 
         .section{
-            padding:18px 15px 17px;
+            padding:
+                18px
+                15px
+                17px;
+
             margin-bottom:10px;
+
             border-radius:17px;
         }
 
         .number{
             width:32px;
             height:32px;
+
             border-radius:10px;
         }
 
@@ -462,6 +793,7 @@
     }
 
     @media(max-width:380px){
+
         .brand-subtitle{
             display:none;
         }
@@ -473,9 +805,11 @@
         .hero-logo{
             width:94px;
             height:94px;
+
             border-radius:22px;
         }
     }
+
 </style>
 </head>
 
@@ -484,211 +818,398 @@
 <div class="page">
 
     <div class="topbar">
+
         <div class="brand">
-            <img src="fox-logo.png" alt="Fox Browser logo" class="brand-logo">
+
+            <img
+                src="fox-logo.png"
+                alt="Fox Browser logo"
+                class="brand-logo">
 
             <div>
-                <div class="brand-title">Fox Browser</div>
-                <div class="brand-subtitle">Privacy Policy</div>
+
+                <div class="brand-title">
+                    Fox Browser
+                </div>
+
+                <div class="brand-subtitle">
+                    Privacy Policy
+                </div>
+
             </div>
+
         </div>
 
         <div class="privacy-badge">
+
             <span class="privacy-dot"></span>
+
             Privacy First
+
         </div>
+
     </div>
 
     <header class="hero">
-        <img src="fox-logo.png" alt="Fox Browser" class="hero-logo">
+
+        <img
+            src="fox-logo.png"
+            alt="Fox Browser"
+            class="hero-logo">
 
         <div>
-            <div class="eyebrow">Privacy & Security</div>
 
-            <h1>Fox Browser Privacy Policy</h1>
+            <div class="eyebrow">
+                Privacy &amp; Security
+            </div>
+
+            <h1>
+                Fox Browser Privacy Policy
+            </h1>
 
             <p class="intro">
-                Fox Browser respects your privacy. This Privacy Policy explains how
-                information is handled when you use our application.
+                Fox Browser respects your privacy.
+                This Privacy Policy explains how
+                information is handled when you
+                use our application.
             </p>
 
             <div class="meta">
-                <div class="chip">Effective Date: 29 July 2026</div>
-                <div class="chip">Local-first data</div>
-                <div class="chip">Fox Browser</div>
+
+                <div class="chip">
+                    Effective Date: 29 July 2026
+                </div>
+
+                <div class="chip">
+                    Local-first data
+                </div>
+
+                <div class="chip">
+                    Fox Browser
+                </div>
+
             </div>
+
         </div>
+
     </header>
 
     <main>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">01</div>
-                <h2>Information We Collect</h2>
+
+                <div class="number">
+                    01
+                </div>
+
+                <h2>
+                    Information We Collect
+                </h2>
+
             </div>
 
             <p>
-                Fox Browser does not collect personal information such as your name,
-                phone number, email address or passwords.
+                Fox Browser does not collect
+                personal information such as
+                your name, phone number,
+                email address or passwords.
             </p>
 
             <p>
-                Browsing history, bookmarks, downloads and settings are stored only on
-                your device.
+                Browsing history, bookmarks,
+                downloads and settings are
+                stored only on your device.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">02</div>
-                <h2>Incognito Mode</h2>
+
+                <div class="number">
+                    02
+                </div>
+
+                <h2>
+                    Incognito Mode
+                </h2>
+
             </div>
 
             <p>
-                Pages opened in Incognito Mode are not saved in normal browsing history.
+                Pages opened in Incognito Mode
+                are not saved in normal browsing history.
             </p>
 
             <p>
-                Temporary browsing data may be removed when the Incognito session ends.
+                Temporary browsing data may be
+                removed when the Incognito session ends.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">03</div>
-                <h2>Permissions</h2>
+
+                <div class="number">
+                    03
+                </div>
+
+                <h2>
+                    Permissions
+                </h2>
+
             </div>
 
             <ul>
-                <li>Internet permission is used to load websites.</li>
-                <li>Storage permission is used to save downloaded files.</li>
-                <li>Microphone permission is used only when you choose Voice Search.</li>
+
+                <li>
+                    Internet permission is used
+                    to load websites.
+                </li>
+
+                <li>
+                    Storage permission is used
+                    to save downloaded files.
+                </li>
+
+                <li>
+                    Microphone permission is used
+                    only when you choose Voice Search.
+                </li>
+
             </ul>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">04</div>
-                <h2>Downloads</h2>
+
+                <div class="number">
+                    04
+                </div>
+
+                <h2>
+                    Downloads
+                </h2>
+
             </div>
 
             <p>
-                Files downloaded through Fox Browser are saved on your device.
+                Files downloaded through Fox Browser
+                are saved on your device.
             </p>
 
             <p>
-                Users are responsible for downloaded content.
+                Users are responsible for
+                downloaded content.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">05</div>
-                <h2>Cookies</h2>
+
+                <div class="number">
+                    05
+                </div>
+
+                <h2>
+                    Cookies
+                </h2>
+
             </div>
 
             <p>
-                Websites opened inside Fox Browser may use cookies and local storage.
+                Websites opened inside Fox Browser
+                may use cookies and local storage.
             </p>
 
             <p>
-                Those websites manage their own cookies according to their own privacy
-                policies.
+                Those websites manage their own
+                cookies according to their own
+                privacy policies.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">06</div>
-                <h2>Third-Party Websites</h2>
+
+                <div class="number">
+                    06
+                </div>
+
+                <h2>
+                    Third-Party Websites
+                </h2>
+
             </div>
 
             <p>
-                Fox Browser displays websites from third parties.
+                Fox Browser displays websites
+                from third parties.
             </p>
 
             <p>
-                We do not control or take responsibility for the privacy practices or
-                content of those websites.
+                We do not control or take
+                responsibility for the privacy
+                practices or content of those websites.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">07</div>
-                <h2>Data Sharing</h2>
+
+                <div class="number">
+                    07
+                </div>
+
+                <h2>
+                    Data Sharing
+                </h2>
+
             </div>
 
             <p>
-                Fox Browser does not sell your personal information.
+                Fox Browser does not sell
+                your personal information.
             </p>
 
             <p>
-                We do not share your personal information with third parties unless
-                required by law.
+                We do not share your personal
+                information with third parties
+                unless required by law.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">08</div>
-                <h2>Security</h2>
+
+                <div class="number">
+                    08
+                </div>
+
+                <h2>
+                    Security
+                </h2>
+
             </div>
 
             <p>
-                We take reasonable measures to keep your locally stored information safe.
+                We take reasonable measures
+                to keep your locally stored
+                information safe.
             </p>
 
             <p>
-                However, no internet transmission is completely secure.
+                However, no internet transmission
+                is completely secure.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">09</div>
-                <h2>Children's Privacy</h2>
+
+                <div class="number">
+                    09
+                </div>
+
+                <h2>
+                    Children's Privacy
+                </h2>
+
             </div>
 
             <p>
-                Fox Browser is not intended to knowingly collect personal information
-                from children.
+                Fox Browser is not intended
+                to knowingly collect personal
+                information from children.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">10</div>
-                <h2>Changes to this Policy</h2>
+
+                <div class="number">
+                    10
+                </div>
+
+                <h2>
+                    Changes to this Policy
+                </h2>
+
             </div>
 
             <p>
-                We may update this Privacy Policy from time to time.
+                We may update this Privacy Policy
+                from time to time.
             </p>
 
             <p>
-                Any changes will appear on this page.
+                Any changes will appear
+                on this page.
             </p>
+
         </section>
 
         <section class="section">
+
             <div class="section-head">
-                <div class="number">11</div>
-                <h2>Contact</h2>
+
+                <div class="number">
+                    11
+                </div>
+
+                <h2>
+                    Contact
+                </h2>
+
             </div>
 
             <div class="contact-grid">
+
                 <div class="contact-card">
-                    <div class="contact-label">Developer</div>
-                    <div class="contact-value">official.batrasindustries</div>
+
+                    <div class="contact-label">
+                        Developer
+                    </div>
+
+                    <div class="contact-value">
+                        official.batrasindustries
+                    </div>
+
                 </div>
 
                 <div class="contact-card">
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value">official.batrasindustries@gmail.com</div>
+
+                    <div class="contact-label">
+                        Email
+                    </div>
+
+                    <div class="contact-value">
+                        official.batrasindustries@gmail.com
+                    </div>
+
                 </div>
+
             </div>
+
         </section>
 
     </main>
