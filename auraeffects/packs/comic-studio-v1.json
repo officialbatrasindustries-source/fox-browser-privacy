@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "comic-studio-v1",
+  "name": "Comic Studio",
+  "kind": "vfx",
+  "license": "CC0-1.0",
+  "presets": [
+    {
+      "name": "Ink sketch",
+      "settings": {
+        "edge": 100
+      }
+    },
+    {
+      "name": "Print comic",
+      "settings": {
+        "halftone": 90,
+        "posterize": 35
+      }
+    },
+    {
+      "name": "Pop poster",
+      "settings": {
+        "posterize": 90,
+        "duotone": 20
+      }
+    },
+    {
+      "name": "Blue ink",
+      "settings": {
+        "edge": 75,
+        "duotone": 85
+      }
+    },
+    {
+      "name": "Solar print",
+      "settings": {
+        "solarize": 100,
+        "posterize": 45
+      }
+    },
+    {
+      "name": "Negative film",
+      "settings": {
+        "invert": 100,
+        "scanlines": 15
+      }
+    },
+    {
+      "name": "Pixel art",
+      "settings": {
+        "pixelate": 22,
+        "posterize": 75
+      }
+    },
+    {
+      "name": "Manga dots",
+      "settings": {
+        "halftone": 100
+      }
+    },
+    {
+      "name": "Neon outlines",
+      "settings": {
+        "edge": 100,
+        "rgbSplit": 35,
+        "bloom": 25
+      }
+    },
+    {
+      "name": "Cyan poster",
+      "settings": {
+        "posterize": 75,
+        "duotone": 100
+      }
+    }
+  ]
+}
