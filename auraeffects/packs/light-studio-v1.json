@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "id": "light-studio-v1",
+  "name": "Light Studio",
+  "kind": "vfx",
+  "license": "CC0-1.0",
+  "presets": [
+    {
+      "name": "Golden flare",
+      "settings": {
+        "lightLeak": 65,
+        "filmBurn": 0,
+        "bloom": 35,
+        "vfxSpeed": 0.6
+      }
+    },
+    {
+      "name": "Warm haze",
+      "settings": {
+        "lightLeak": 35,
+        "filmBurn": 0,
+        "bloom": 80,
+        "vfxSpeed": 0.4
+      }
+    },
+    {
+      "name": "Burn transition",
+      "settings": {
+        "lightLeak": 0,
+        "filmBurn": 100,
+        "bloom": 15,
+        "vfxSpeed": 1
+      }
+    },
+    {
+      "name": "Sun wash",
+      "settings": {
+        "lightLeak": 90,
+        "filmBurn": 0,
+        "bloom": 60,
+        "vfxSpeed": 0.3
+      }
+    },
+    {
+      "name": "Soft glow",
+      "settings": {
+        "lightLeak": 15,
+        "filmBurn": 0,
+        "bloom": 90,
+        "vfxSpeed": 0.7
+      }
+    },
+    {
+      "name": "Amber drift",
+      "settings": {
+        "lightLeak": 75,
+        "filmBurn": 20,
+        "bloom": 25,
+        "vfxSpeed": 0.8
+      }
+    },
+    {
+      "name": "Film flash",
+      "settings": {
+        "lightLeak": 20,
+        "filmBurn": 70,
+        "bloom": 45,
+        "vfxSpeed": 1.5
+      }
+    },
+    {
+      "name": "Dream light",
+      "settings": {
+        "lightLeak": 45,
+        "filmBurn": 0,
+        "bloom": 100,
+        "vfxSpeed": 0.25
+      }
+    },
+    {
+      "name": "Vintage leak",
+      "settings": {
+        "lightLeak": 55,
+        "filmBurn": 35,
+        "bloom": 30,
+        "vfxSpeed": 0.5
+      }
+    },
+    {
+      "name": "Evening bloom",
+      "settings": {
+        "lightLeak": 20,
+        "filmBurn": 0,
+        "bloom": 55,
+        "vfxSpeed": 0.3
+      }
+    }
+  ]
+}
