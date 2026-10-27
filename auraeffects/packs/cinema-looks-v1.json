@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "id": "cinema-looks-v1",
+  "name": "Cinema Looks",
+  "kind": "look",
+  "license": "CC0-1.0",
+  "presets": [
+    {
+      "name": "Warm cinema",
+      "settings": {
+        "warmth": 22,
+        "contrast": 115,
+        "grade.fade": 7
+      }
+    },
+    {
+      "name": "Cool night",
+      "settings": {
+        "warmth": -25,
+        "contrast": 118,
+        "saturation": 80
+      }
+    },
+    {
+      "name": "Soft portrait",
+      "settings": {
+        "contrast": 92,
+        "grade.exposure": 0.2,
+        "saturation": 95
+      }
+    },
+    {
+      "name": "Clean bright",
+      "settings": {
+        "grade.exposure": 0.35,
+        "contrast": 107,
+        "grade.vibrance": 15
+      }
+    },
+    {
+      "name": "Muted film",
+      "settings": {
+        "saturation": 65,
+        "grade.fade": 14,
+        "contrast": 110
+      }
+    },
+    {
+      "name": "High contrast",
+      "settings": {
+        "contrast": 135,
+        "saturation": 90
+      }
+    },
+    {
+      "name": "Golden hour",
+      "settings": {
+        "warmth": 38,
+        "grade.exposure": 0.2,
+        "grade.highlights": -15
+      }
+    },
+    {
+      "name": "Silver mono",
+      "settings": {
+        "saturation": 0,
+        "contrast": 120
+      }
+    },
+    {
+      "name": "Pastel",
+      "settings": {
+        "saturation": 75,
+        "contrast": 85,
+        "grade.fade": 10
+      }
+    },
+    {
+      "name": "Deep teal",
+      "settings": {
+        "warmth": -18,
+        "contrast": 123,
+        "grade.shadows": -12
+      }
+    },
+    {
+      "name": "Fade warm",
+      "settings": {
+        "warmth": 18,
+        "grade.fade": 20,
+        "saturation": 85
+      }
+    },
+    {
+      "name": "Natural",
+      "settings": {
+        "contrast": 105,
+        "saturation": 102,
+        "grade.vibrance": 8
+      }
+    }
+  ]
+}
