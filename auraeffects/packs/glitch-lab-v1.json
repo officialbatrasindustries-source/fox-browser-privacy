@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "id": "glitch-lab-v1",
+  "name": "Glitch Lab",
+  "kind": "vfx",
+  "license": "CC0-1.0",
+  "presets": [
+    {
+      "name": "Signal break",
+      "settings": {
+        "rgbSplit": 60,
+        "vhs": 55,
+        "scanlines": 35
+      }
+    },
+    {
+      "name": "Broken TV",
+      "settings": {
+        "vhs": 90,
+        "scanlines": 65,
+        "posterize": 20
+      }
+    },
+    {
+      "name": "Digital ghost",
+      "settings": {
+        "rgbSplit": 85,
+        "duotone": 40
+      }
+    },
+    {
+      "name": "Pixel storm",
+      "settings": {
+        "pixelate": 38,
+        "rgbSplit": 30,
+        "vhs": 30
+      }
+    },
+    {
+      "name": "Cyan circuit",
+      "settings": {
+        "edge": 65,
+        "duotone": 90
+      }
+    },
+    {
+      "name": "Vapor tape",
+      "settings": {
+        "vhs": 30,
+        "lightLeak": 40,
+        "posterize": 30
+      }
+    },
+    {
+      "name": "Transmission",
+      "settings": {
+        "wave": 30,
+        "scanlines": 65
+      }
+    },
+    {
+      "name": "Cyber mirror",
+      "settings": {
+        "mirror": 100,
+        "rgbSplit": 45
+      }
+    },
+    {
+      "name": "Arcade",
+      "settings": {
+        "posterize": 75,
+        "scanlines": 45,
+        "pixelate": 12
+      }
+    },
+    {
+      "name": "Chromatic pulse",
+      "settings": {
+        "rgbSplit": 65,
+        "strobe": 55
+      }
+    },
+    {
+      "name": "Solar glitch",
+      "settings": {
+        "solarize": 90,
+        "vhs": 25
+      }
+    },
+    {
+      "name": "Night signal",
+      "settings": {
+        "duotone": 90,
+        "scanlines": 60,
+        "bloom": 35
+      }
+    }
+  ]
+}
