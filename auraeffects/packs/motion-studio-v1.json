@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "id": "motion-studio-v1",
+  "name": "Motion Studio",
+  "kind": "shake",
+  "license": "CC0-1.0",
+  "presets": [
+    {
+      "name": "Handheld soft",
+      "settings": {
+        "shakePreset": "Handheld",
+        "shakeAmount": 25,
+        "shakeFrequency": 2
+      }
+    },
+    {
+      "name": "Impact hit",
+      "settings": {
+        "shakePreset": "Impact",
+        "shakeAmount": 85,
+        "shakeFrequency": 8
+      }
+    },
+    {
+      "name": "Bounce soft",
+      "settings": {
+        "shakePreset": "Bounce",
+        "shakeAmount": 35,
+        "shakeFrequency": 2
+      }
+    },
+    {
+      "name": "Horizontal fast",
+      "settings": {
+        "shakePreset": "Horizontal",
+        "shakeAmount": 55,
+        "shakeFrequency": 7
+      }
+    },
+    {
+      "name": "Vertical low",
+      "settings": {
+        "shakePreset": "Vertical",
+        "shakeAmount": 25,
+        "shakeFrequency": 3
+      }
+    },
+    {
+      "name": "Jitter snap",
+      "settings": {
+        "shakePreset": "Jitter",
+        "shakeAmount": 65,
+        "shakeFrequency": 9
+      }
+    },
+    {
+      "name": "Zoom pulse slow",
+      "settings": {
+        "shakePreset": "Zoom pulse",
+        "shakeAmount": 60,
+        "shakeFrequency": 1
+      }
+    },
+    {
+      "name": "Earthquake heavy",
+      "settings": {
+        "shakePreset": "Earthquake",
+        "shakeAmount": 90,
+        "shakeFrequency": 10
+      }
+    },
+    {
+      "name": "Pendulum smooth",
+      "settings": {
+        "shakePreset": "Pendulum",
+        "shakeAmount": 45,
+        "shakeFrequency": 1
+      }
+    },
+    {
+      "name": "Orbit wide",
+      "settings": {
+        "shakePreset": "Orbit",
+        "shakeAmount": 75,
+        "shakeFrequency": 2
+      }
+    },
+    {
+      "name": "Roll light",
+      "settings": {
+        "shakePreset": "Roll",
+        "shakeAmount": 30,
+        "shakeFrequency": 2
+      }
+    },
+    {
+      "name": "Sway slow",
+      "settings": {
+        "shakePreset": "Sway",
+        "shakeAmount": 50,
+        "shakeFrequency": 1
+      }
+    },
+    {
+      "name": "Tremor micro",
+      "settings": {
+        "shakePreset": "Tremor",
+        "shakeAmount": 20,
+        "shakeFrequency": 9
+      }
+    },
+    {
+      "name": "Snap zoom beat",
+      "settings": {
+        "shakePreset": "Snap zoom",
+        "shakeAmount": 85,
+        "shakeFrequency": 2
+      }
+    },
+    {
+      "name": "Heartbeat soft",
+      "settings": {
+        "shakePreset": "Heartbeat",
+        "shakeAmount": 45,
+        "shakeFrequency": 1.2
+      }
+    },
+    {
+      "name": "Whip fast",
+      "settings": {
+        "shakePreset": "Whip",
+        "shakeAmount": 70,
+        "shakeFrequency": 6
+      }
+    }
+  ]
+}
