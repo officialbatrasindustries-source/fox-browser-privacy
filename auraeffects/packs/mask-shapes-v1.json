@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "id": "mask-shapes-v1",
+  "name": "Mask Shapes",
+  "kind": "mask",
+  "license": "CC0-1.0",
+  "presets": [
+    {
+      "name": "Triangle",
+      "settings": {
+        "shape": "Triangle",
+        "maskRotation": 0,
+        "maskFeather": 0
+      }
+    },
+    {
+      "name": "Star",
+      "settings": {
+        "shape": "Star",
+        "maskRotation": 0,
+        "maskFeather": 0
+      }
+    },
+    {
+      "name": "Heart",
+      "settings": {
+        "shape": "Heart",
+        "maskRotation": 0,
+        "maskFeather": 2
+      }
+    },
+    {
+      "name": "Pentagon",
+      "settings": {
+        "shape": "Pentagon",
+        "maskRotation": 0,
+        "maskFeather": 0
+      }
+    },
+    {
+      "name": "Hexagon",
+      "settings": {
+        "shape": "Hexagon",
+        "maskRotation": 0,
+        "maskFeather": 0
+      }
+    },
+    {
+      "name": "Octagon",
+      "settings": {
+        "shape": "Octagon",
+        "maskRotation": 0,
+        "maskFeather": 0
+      }
+    },
+    {
+      "name": "Soft oval",
+      "settings": {
+        "shape": "Oval",
+        "maskRotation": 0,
+        "maskFeather": 10
+      }
+    },
+    {
+      "name": "Tilted box",
+      "settings": {
+        "shape": "Rectangle",
+        "maskRotation": 25,
+        "maskFeather": 2
+      }
+    },
+    {
+      "name": "Diamond",
+      "settings": {
+        "shape": "Diamond",
+        "maskRotation": 0,
+        "maskFeather": 1
+      }
+    },
+    {
+      "name": "Diagonal wipe",
+      "settings": {
+        "shape": "Wipe",
+        "maskRotation": 40,
+        "maskFeather": 5
+      }
+    }
+  ]
+}
